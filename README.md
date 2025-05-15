@@ -1,6 +1,4 @@
 
-
-```markdown
 # 🕵️‍♂️🔐 DarkVault CTF Simulation Project 🌌💻
 
 <p align="center">
@@ -11,7 +9,6 @@
 
 Welcome to **DarkVault** - An immersive cybersecurity CTF simulation environment with hidden challenges and flags! This project simulates an underground hacking interface with multiple access points and secret pathways.
 
-```diff
 + Key Features:
 ! Hidden CTF flag (Netrinix{...}) waiting to be discovered
 # Interactive console with flag validation
