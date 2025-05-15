@@ -1,0 +1,32 @@
+
+body {
+  background: #0b0b0b;
+  color: #e0e0e0;
+  font-family: monospace;
+  text-align: center;
+}
+header {
+  padding: 2rem;
+  background: #111;
+}
+h1.glitch {
+  font-size: 3em;
+  color: lime;
+  animation: glitch 1s infinite;
+}
+nav a {
+  margin: 10px;
+  color: cyan;
+  text-decoration: none;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+section.intro {
+  padding: 2rem;
+}
+@keyframes glitch {
+  0% { text-shadow: 2px 2px red; }
+  50% { text-shadow: -2px -2px blue; }
+  100% { text-shadow: 2px -2px green; }
+}

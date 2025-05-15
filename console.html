@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>System Console | DarkVault</title>
+  <style>
+    body {
+      background: #000;
+      color: #0f0;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .console {
+      width: 80%;
+      max-width: 800px;
+      height: 400px;
+      background: #111;
+      border: 2px solid #0f0;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    .prompt {
+      color: #0f0;
+      display: flex;
+      align-items: center;
+    }
+    input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #0f0;
+      color: #0f0;
+      font-family: monospace;
+      width: 80%;
+      padding: 5px;
+      margin-left: 10px;
+      caret-color: #0f0;
+    }
+    input:focus {
+      outline: none;
+      border-bottom-color: #0ff;
+    }
+    #response {
+      margin-top: 20px;
+      min-height: 100px;
+      white-space: pre-wrap;
+    }
+    .hidden {
+      display: none;
+    }
+    .success-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #111;
+      border: 3px solid #0f0;
+      padding: 30px;
+      text-align: center;
+      z-index: 100;
+      animation: pulse 0.5s infinite alternate, float 3s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      from { box-shadow: 0 0 10px #0f0; }
+      to { box-shadow: 0 0 30px #0f0; }
+    }
+    @keyframes float {
+      0% { transform: translate(-50%, -50%); }
+      50% { transform: translate(-50%, -55%); }
+      100% { transform: translate(-50%, -50%); }
+    }
+    .failure {
+      color: #f00;
+      animation: shake 0.5s;
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-5px); }
+      40%, 80% { transform: translateX(5px); }
+    }
+    .blink {
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink {
+      from, to { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="console">
+    <p>DarkVault System Console v3.1.4</p>
+    <p>Enter verification code:</p>
+    <div class="prompt">
+      > <input type="text" id="flagInput" placeholder="Enter flag..." autofocus>
+      <span class="blink">█</span>
+    </div>
+    <div id="response"></div>
+  </div>
+
+  <div id="successPopup" class="hidden success-popup">
+    <h2>🚀 You are the DarkVault Hunter! 🎉</h2>
+    <p>Congratulations! 🏆</p>
+    <p>Flag verified successfully! 🔓</p>
+    <p>Netrinix{4dm1n_p4n3l_s0urc3_c0d3}</p>
+  </div>
+
+  <script>
+    // Console hints
+    console.log("Need help finding the flag? Here's a hint:");
+    console.log("The dashboard isn't where you'd normally expect it to be");
+    console.log("Look for something that starts with 'dv-'");
+    console.log("The flag format is: Netrinix{something_here}");
+
+    // Flag validation
+    document.getElementById('flagInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        const userInput = this.value.trim();
+        const responseDiv = document.getElementById('response');
+        const successPopup = document.getElementById('successPopup');
+        
+        // Clear previous responses
+        responseDiv.innerHTML = '';
+        responseDiv.className = '';
+        
+        if (userInput === 'Netrinix{4dm1n_p4n3l_s0urc3_c0d3}') {
+          // Correct flag
+          responseDiv.innerHTML = '> Verifying...\n> Access granted!\n> Loading celebration sequence...';
+          setTimeout(() => {
+            successPopup.classList.remove('hidden');
+            // Add confetti effect
+            const confetti = document.createElement('div');
+            confetti.innerHTML = '🎉🎊🌟';
+            confetti.style.position = 'fixed';
+            confetti.style.top = '0';
+            confetti.style.left = '0';
+            confetti.style.width = '100%';
+            confetti.style.height = '100%';
+            confetti.style.display = 'flex';
+            confetti.style.justifyContent = 'center';
+            confetti.style.alignItems = 'center';
+            confetti.style.fontSize = '2em';
+            confetti.style.pointerEvents = 'none';
+            confetti.style.zIndex = '99';
+            confetti.style.animation = 'fadeOut 2s 3s forwards';
+            document.body.appendChild(confetti);
+            
+            // Create keyframes for fadeOut
+            const style = document.createElement('style');
+            style.innerHTML = `@keyframes fadeOut { to { opacity: 0; } }`;
+            document.head.appendChild(style);
+          }, 1500);
+        } else {
+          // Incorrect flag
+          responseDiv.innerHTML = '> Verifying...\n> ERROR: Invalid verification code';
+          responseDiv.classList.add('failure');
+          this.value = ''; // Clear input
+        }
+      }
+    });
+
+    // Easter egg for empty input
+    document.getElementById('flagInput').addEventListener('blur', function() {
+      if (this.value.trim() === '') {
+        document.getElementById('response').innerHTML = '> System ready for verification code input';
+      }
+    });
+  </script>
+</body>
+</html>

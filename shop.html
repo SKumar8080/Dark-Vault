@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Marketplace | DarkVault</title>
+  <style>
+    body {
+      background: #000;
+      color: #e0e0e0;
+      font-family: monospace;
+      text-align: center;
+    }
+    header {
+      padding: 2rem;
+      background: #111;
+      border-bottom: 2px solid #0f0;
+    }
+    h1.glitch {
+      font-size: 3em;
+      color: #0f0;
+      animation: glitch 1s infinite;
+    }
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px red; }
+      50% { text-shadow: -2px -2px blue; }
+      100% { text-shadow: 2px -2px green; }
+    }
+  </style>
+</head>
+<body class="dark">
+  <header><h1 class="glitch" data-text="Black Market">Black Market</h1></header>
+  <main><p>Explore categories like Fake IDs, Bank Drops, and Fullz...</p></main>
+  <script>
+    console.log("Nothing to see here, move along");
+  </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | DarkVault</title>
+  <style>
+    body {
+      background: #000;
+      color: #0f0;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #111;
+      padding: 2rem;
+      border: 1px solid #0f0;
+      border-radius: 5px;
+      width: 300px;
+      text-align: center;
+    }
+    h1 {
+      color: #0f0;
+      margin-bottom: 1.5rem;
+    }
+    input {
+      display: block;
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      background: #222;
+      color: #0f0;
+      border: 1px solid #0f0;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 1rem;
+      background: #0f0;
+      color: #000;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #0c0;
+    }
+    #welcomePopup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #111;
+      border: 3px solid #0f0;
+      padding: 2rem;
+      text-align: center;
+      z-index: 100;
+      display: none;
+      box-shadow: 0 0 20px #0f0;
+    }
+    @keyframes float {
+      0% { transform: translate(-50%, -50%); }
+      50% { transform: translate(-50%, -55%); }
+      100% { transform: translate(-50%, -50%); }
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px #0f0; }
+      50% { box-shadow: 0 0 30px #0f0; }
+      100% { box-shadow: 0 0 10px #0f0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Agent Registration</h1>
+    <form id="registerForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <div id="welcomePopup">
+    <h2>Welcome, <span id="welcomeName"></span>! 👋</h2>
+    <p>Thank you for registering with DarkVault! 🎉</p>
+    <p>You will be redirected shortly...</p>
+  </div>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const username = document.getElementById('username').value;
+      const welcomePopup = document.getElementById('welcomePopup');
+      const welcomeName = document.getElementById('welcomeName');
+      
+      // Show welcome message
+      welcomeName.textContent = username;
+      welcomePopup.style.display = 'block';
+      welcomePopup.style.animation = 'float 3s ease-in-out infinite, pulse 2s infinite';
+      
+      // Redirect after 3 seconds
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 3000);
+    });
+
+    console.log("Register to access the DarkVault system");
+  </script>
+</body>
+</html>

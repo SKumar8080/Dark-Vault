@@ -1,0 +1,1 @@
+console.log('Simulation Log: Visitor entered simulation.');
