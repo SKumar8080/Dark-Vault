@@ -10,7 +10,7 @@
 Welcome to **DarkVault** - An immersive cybersecurity CTF simulation environment with hidden challenges and flags! This project simulates an underground hacking interface with multiple access points and secret pathways.
 
 + Key Features:
-! Hidden CTF flag (Netrinix{...}) waiting to be discovered
+! Hidden CTF flag (#####{...}) waiting to be discovered
 # Interactive console with flag validation
 * Animated login/registration sequences
 > Multiple clues and red herrings
@@ -29,8 +29,8 @@ Welcome to **DarkVault** - An immersive cybersecurity CTF simulation environment
 
 ```mermaid
 graph TD
-    A[Start at Index] --> B[Decode Base64 Clue]
-    B --> C[Find Hidden Admin Panel]
+    A[Start at Index] --> B[Decode Clue]
+    B --> C[Find Hidden Panel]
     C --> D[Locate Flag]
     D --> E[Validate in Console]
 ```
