@@ -2,7 +2,7 @@
 # 🕵️‍♂️🔐 DarkVault CTF Simulation Project 🌌💻
 
 <p align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWJ0d2JtZ2F6dG1lZ2h5dWJ6Y2VxZ3JqY2N6eGZ1bGJ6dHZ1eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ICOgUNjpvO0PC/giphy.gif" width="400">
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXRuNGsxaXI0cHpiYXg1dDk5ZW5waDA2ZmJ6MndrMmg2a2F6enYxciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/oZDd8XHJeHive/giphy.gif" width="400">
 </p>
 
 ## 🚀 Project Overview
@@ -15,12 +15,11 @@ Welcome to **DarkVault** - An immersive cybersecurity CTF simulation environment
 * Animated login/registration sequences
 > Multiple clues and red herrings
 - Admin dashboard with secret access
-```
 
 ## � Installation & Usage
 
 1. Clone the repository:
-   ```bash
+   ```
    git clone https://github.com/yourusername/DarkVault-CTF.git
    ```
 2. Open `index.html` in your browser
@@ -36,17 +35,14 @@ graph TD
     D --> E[Validate in Console]
 ```
 
-**Flag Format**: `Netrinix{4dm1n_p4n3l_s0urc3_c0d3}`  
+**Flag Format**: `#####{********}`  
 **Difficulty**: Intermediate  
 **Categories**: Web, Steganography, Forensic  
 
 ## 🕵️ How to Play
 
 1. Explore the website interface
-2. Find hidden clues in:
-   - Page sources 🔍
-   - Console messages 💻
-   - Network requests 🌐
+2. Find hidden clues
 3. Submit your found flag in the System Console
 
 ## 🎥 Demo Preview
